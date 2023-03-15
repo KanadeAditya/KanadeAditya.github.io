@@ -43,7 +43,7 @@ ul{
     list-style: none;
 }
 
-/* misc ------------------------------------------------ */
+/* DRY ------------------------------------------------ */
 
 .container{
     position: relative;
@@ -62,16 +62,39 @@ ul{
     font-size: 1.5rem;
     color: var(--heading-color);
     letter-spacing: 1px;
+    transition: 0.3s;
 }
 
 .logo span{
     color: var(--main-color-1);
 }
 
-header .logo {
-    height: 120px;
-    line-height: 120px;
+.sub-heading{
+    color: var(--heading-color);
+    font-size: 0.85rem;
+    text-transform:uppercase;
+    letter-spacing: 0.5px;
+    border-left:  3px solid var(--main-color-2);
+    padding: 0.13rem 0.75rem;
+    margin-bottom: 1rem;
+    font-weight: 500;
 }
+
+.heading{
+    color: var(--heading-color);
+    font-size: 3rem;
+    font-family: "Abril fatface", cursive;
+    font-weight: 400;
+    line-height: 1.3;
+}
+
+.text{
+    color: var(--text-color);
+    font-size: 0.9rem;
+    margin: 2rem 0;
+}
+
+
 
 /* navbar starts here --------------------------------- */
 
@@ -82,7 +105,24 @@ header{
     width: 100;
     width: 100%;
     z-index: 10;
-   
+    transition: 0.3s;
+}
+
+header.scrolled{
+    background-color: var(--bg-color-transperent);
+    box-shadow:0 5px 20px 0.1px rgba(0,0,0,0.1);
+    backdrop-filter: blur(30px);
+}
+
+header .logo {
+    height: 120px;
+    line-height: 120px;
+    transition: 0.3s;
+}
+
+header.scrolled .logo {
+    height: 80px;
+    line-height: 80px;
 }
 
 nav.container{
@@ -111,20 +151,153 @@ nav.container{
     text-transform: uppercase;
     font-size: 0.75rem;
     letter-spacing: 0.5px;
+    color: rgba(33, 30, 30, 0.862);
     font-weight: 500;
     opacity: 0.9;
     transition: 0.3s;
 }
 
-/* .nav-link::after{
+.nav-link::after{
     content: "";
     position: absolute;
-    width: 100%;
+    width: 0%;
     height: 10px;
     border-radius: 5px;
     background-color: var(--main-color-1);
-} */
+    bottom: 0;
+    left: -5px;
+    z-index: -1;
+    opacity: 0;
+    transition: 0.3s;
+}
 
 .nav-link:hover{
     color: var(--heading-color);
+}
+
+.nav-link:hover::after{
+    width: 100%;
+    opacity: 0.2;
+}
+
+.toogle-btn{
+    color: var(--heading-color);
+    min-width: 40px;
+    height: 40px;
+    background-color: var(--bg-color-2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    cursor: pointer;
+    box-shadow: 0 0 10px 0px rgba(0,0,0,0.05);
+    transition: 0.3s;
+}
+
+.toogle-btn:hover{
+    filter: brightness(97%);
+}
+
+/* hero section ------------------------------------ */
+
+.hero-area{
+    padding: 120px 0;
+    width: 100%;
+    overflow: hidden;
+    /* background-color: red; */
+}
+
+.hero-area .container {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    height: calc(100vh - 120px);
+    max-height: 600px;
+    align-items: center;
+} 
+
+.hero-area.container{
+    margin-bottom: 0.7rem;
+}
+
+.hero-area.sub-heading{
+    font-size: 3.5rem;
+}
+
+.hero-area.text{
+    margin: 0.8rem 0;
+}
+
+.cta{
+    margin-top: 3.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.cta .btn{
+    margin-right: 1.5rem;
+}
+
+.btn{
+    display: inline-block;
+    padding: 0.9rem 1.75rem;
+    border-radius: 17px;
+    background-color: var(--main-color-1);
+    color: #fff;
+    font-size: 0.85rem;
+    letter-spacing: 0.4px;
+    text-transform: capitalize;
+    transition: 0.3s;
+}
+
+.btn:hover{
+    background-color: var(--main-color-dark-1);
+}
+
+.btn.secondary-btn{
+    position: relative;
+    background-color: transparent;
+    color: var(--main-color-1);
+    font-weight: 500;
+    font-size: 0.9rem;
+    letter-spacing: 0px;
+    border-bottom: 2.5px solid var(--main-color-2);
+    border-radius: 0px;
+    padding: 0.15rem 0;
+}
+
+.btn.secondary-btn::before{
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 2.5px;
+    bottom:-2.5px;
+    left: 0;
+    background-color: var(--main-color-1);
+    transition: 0.4s ease-in-out;
+}
+
+.btn.secondary-btn:hover::before{
+    width: 100%;
+
+}
+
+.hero-image{
+    position: relative;
+    width: 100%;
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(55,7,147,1) 46%, rgba(0,212,255,1) 100%);
+    min-height: 75%;
+    /* margin-top: -120px; */
+    border-radius: 80px 80px 80px 80px;
+    box-shadow: blue 0px 0px 0px 2px inset, rgb(255, 255, 255) 10px -10px 0px -3px, rgb(139, 57, 207) 10px -10px, rgb(255, 255, 255) 20px -20px 0px -3px, rgb(5, 130, 207) 20px -20px, rgb(255, 255, 255) 30px -30px 0px -3px,rgb(137, 85, 240) 30px -30px, rgb(255, 255, 255) 40px -40px 0px -3px, cyan 40px -40px;
+
+}
+
+.hero-image img{
+    position: absolute;
+    border-radius: 15%;
+    width: 100%;
+    top: 25;
+    height: 100%;
 }
