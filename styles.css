@@ -587,7 +587,7 @@ textarea.form-input{
     display: flex;
 }
 
-.socialaccount-media .gitlinkedin {
+.socialaccount-media .gitlinkedin  {
     /* background-color: var(--main-color-1); */
     /* width: 100px; */
     color: var(--main-color-1);
@@ -613,7 +613,7 @@ textarea.form-input{
 }
 
 .socialaccount-link i{
-    
+    color: var(--heading-color);
     font-size: 4rem;
     transition: 0.3s;
 }
