@@ -1,22 +1,58 @@
 @import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Poppins:wght@300;400;500;600;700;800&display=swap');
 
+/* theme ---------------------------------- */
+
 :root {
     --hue-1: 257;
     --hue-2: 47;
-    --bg-color : hsl(var(--hue-1), 100%, 97%);
     --main-color-1: hsl(var(--hue-1), 100%, 60%);
     --main-color-dark-1: hsl(var(--hue-1), 69%, 50%);
     --main-color-2: hsl(var(--hue-2), 100%, 61%);
     --main-color-dark-2: hsl(var(--hue-2), 82%, 55%);
+    
+    --section-padding: 7rem;
+}
+
+body{
+    --bg-color : hsl(var(--hue-1), 100%, 97%);
     --bg-color-1:  hsl(var(--hue-1), 100%, 95.5%);
     --bg-color-2: #fff;
     --bg-color-3:  hsl(var(--hue-1), 100%, 98%);
     --bg-color-transperent:  rgba(255,255,255,0.6);
     --heading-color: hsl(var(--hue-1), 61%, 24%);
     --text-color:  hsl(var(--hue-1), 17%, 63%);
-    --section-padding: 7rem;
-  }
+}
 
+body.dark{
+    --bg-color : hsl(var(--hue-1), 19%, 15%);
+    --bg-color-1:  hsl(var(--hue-1), 21%, 11%);
+    --bg-color-2:  hsl(var(--hue-1), 23%, 19%);
+    --bg-color-3:  hsl(var(--hue-1), 23%, 24%);
+    --bg-color-transperent:  hsla(var(--hue-1),23%,19%,0.6 );
+    --heading-color: hsl(var(--hue-1), 100%, 95%);
+    --text-color:  hsl(var(--hue-1), 14%, 51%);
+}
+
+body.dark .toogle-btn{
+    background-color: var(--bg-color-3);
+}
+
+body.dark .toogle-btn:hover{
+    background-color: brightness(110%);
+}
+
+
+
+body.dark .nav-link:hover::after, body.dark .nav-link.active::after {
+    opacity: 0.6;
+}
+
+body.dark .form-input:hover{
+    filter: brightness(110%);
+}
+
+
+/* styles --------------------- */
 
 * , *::before , *::after{
     padding: 0;
@@ -32,6 +68,7 @@ body{
     overflow-x: hidden;
     background-color: var(--bg-color);
     font-family: "Poppins", sans-serif;
+    transition: 0.3s background-color;
 }
 
 ::selection{
@@ -82,6 +119,7 @@ ul{
     padding: 0.13rem 0.75rem;
     margin-bottom: 1rem;
     font-weight: 500;
+    transition: 0.3s color;
 }
 
 .heading{
@@ -90,6 +128,7 @@ ul{
     font-family: "Abril fatface", cursive;
     font-weight: 400;
     line-height: 1.3;
+    transition: 0.3s color;
 }
 
 .text{
@@ -97,6 +136,7 @@ ul{
     font-size: 0.9rem;
     margin: 2rem 0;
     line-height: 2.3;
+    transition: 0.3s color;
 }
 
 .section{
@@ -220,7 +260,7 @@ nav.container{
     text-transform: uppercase;
     font-size: 0.75rem;
     letter-spacing: 0.5px;
-    color: rgba(33, 30, 30, 0.862);
+    color:var(--text-color);
     font-weight: 500;
     opacity: 0.9;
     transition: 0.3s;
@@ -355,6 +395,7 @@ nav.container{
     padding: 5rem 6rem;
     border-radius: 20px;
     width: 100%;
+    transition: 0.3s background-color;
 }
 .skills-wrap{
     display: grid;
@@ -399,10 +440,12 @@ nav.container{
 
 .sk-title{
     color: var(--heading-color);
+
     /* margin-top: 0.75rem; */
     /* padding: 0;
     margin: 0; */
     font-weight: 500;
+    transition: 0.3s color;
 }
 
 /* portfolio section ---------------------- */
@@ -431,6 +474,7 @@ nav.container{
     margin-right: 1.3rem;
     font-family: inherit;
     text-transform: uppercase;
+    transition: 0.3s color;
 }
 
 .portfolio-gallery{
@@ -448,6 +492,7 @@ nav.container{
     grid-template-rows: 1fr auto;
     align-content: space-between;
     padding: 1rem;
+    transition: 0.3s background-color;
 }
 
 .prt-image{
@@ -470,6 +515,7 @@ nav.container{
     color: var(--heading-color);
     font-weight: 600 ;
     text-transform: capitalize;
+    transition: 0.3s color;
 }
 
 .btn.secondary-btn.sm{
@@ -497,6 +543,7 @@ nav.container{
     color: var(--heading-color);
     font-size: 0.8rem;
     font-weight: 500;
+    transition: 0.3s color;
 }
 
 /* contact section --------------- */
@@ -537,6 +584,7 @@ nav.container{
     padding: 3.5rem 3rem;
     display: flex;
     flex-direction: column;
+    transition: 0.3s background-color;
 }
 
 .contact-form h3{
@@ -545,6 +593,7 @@ nav.container{
     font-weight: 500;
     margin-bottom: 1.6rem;
     line-height: 0.9;
+    transition: 0.3s color;
 }
 
 .form-input{
@@ -601,6 +650,7 @@ textarea.form-input{
 .socialaccount-media .gitlinkedin:hover i{
     color: var(--main-color-2);
     transition: 0.3s;
+    transition: 0.3s color;
 }
 
 .socialaccount-link{
@@ -614,10 +664,12 @@ textarea.form-input{
     color: var(--heading-color);
     margin-top: 1rem;
     font-weight: 500;
+    transition: 0.3s color;
 }
 
 .socialaccount-link i{
     color: var(--heading-color);
+    transition: 0.3s color;
     font-size: 4rem;
     transition: 0.3s;
 }
@@ -650,6 +702,7 @@ footer .social-media{
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: 0.3s background-color;
     transition: 0.3s;
 }
 

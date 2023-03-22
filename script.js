@@ -6,6 +6,7 @@ function fixednav(){
 
 const linsk = document.querySelectorAll(".nav-link")
 
+const toogle = document.querySelector(".toogle-btn");
 
 fixednav()
 window.addEventListener("load",()=>{
@@ -50,3 +51,34 @@ function activeLink(){
 }
 // linsk.forEach(l => l.classList.remove("active"));
 activeLink()
+
+
+// toggle dark mode ---------------------------/
+
+
+let currenttheme = +localStorage.getItem("darkportfolio") ;
+
+changeTheme(+currenttheme)
+
+
+toogle.addEventListener("click",()=>{
+    changeTheme(!document.body.classList.contains("dark"));
+})
+
+
+
+
+
+function changeTheme(isdark){
+    // <i class="uil uil-sun"></i>
+    
+    if(!isdark){
+        document.body.classList.remove("dark");
+        toogle.classList.replace("uil-sun","uil-moon");
+        localStorage.setItem("darkportfolio",0);
+    }else{
+        document.body.classList.add("dark");
+        toogle.classList.replace("uil-moon","uil-sun");
+        localStorage.setItem("darkportfolio",1);
+    }
+}
