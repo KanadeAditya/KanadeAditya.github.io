@@ -710,3 +710,34 @@ footer .social-media{
     color: var(--main-color-1);
     /* transition: 0.3s; */
 }
+
+.text-muted {
+
+    color: var(--text-color);
+    font-size: 0.6rem;
+    margin: 1rem 0 0 0;
+    line-height: 2;
+    font-weight: 900;
+    transition: 0.3s color;
+    
+}
+
+.contrib-column > .contrib-number{
+    font-size: 0.85rem;
+    font-weight: 800;
+    letter-spacing: 0.4px;
+    color: var(--main-color-1);
+}
+
+
+
+
+
+.stat-box{
+    border-radius: 20px;
+    padding: 3.5rem 2rem;
+    background-color: var(--bg-color-2);
+}
+
+
+
