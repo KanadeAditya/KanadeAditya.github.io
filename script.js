@@ -8,6 +8,8 @@ const linsk = document.querySelectorAll(".nav-link")
 
 const toogle = document.querySelector(".toogle-btn");
 
+const hamburger = document.querySelector('.hamburger');
+
 fixednav()
 window.addEventListener("load",()=>{
    
@@ -37,6 +39,7 @@ scroll.reveal(".hero-image", { origin:"top" ,delay : 600})
 function activeLink(){
     // console.log("heeh")
     let sections = document.querySelectorAll("section[id]");
+    // console.log(sections)
     let passedsections = Array.from(sections).map((sct,int)=>{
         return {
             y:sct.getBoundingClientRect().top - head.offsetHeight,
@@ -45,6 +48,9 @@ function activeLink(){
     }).filter(sct => sct.y<=0 )
     let currSectionID = passedsections.at(-1).id;
     // console.log(currSectionID)
+    if(currSectionID === 5){
+        currSectionID = 4
+    }
     linsk.forEach(l => l.classList.remove("active"));
     linsk[currSectionID].classList.add("active");
 
@@ -82,3 +88,16 @@ function changeTheme(isdark){
         localStorage.setItem("darkportfolio",1);
     }
 }
+
+// open close navbar
+
+hamburger.addEventListener('click',()=>{
+    document.body.classList.toggle("open")
+    document.body.classList.toggle("stopScrolling")
+
+})
+
+linsk.forEach(link => link.addEventListener('click',()=>{
+    document.body.classList.remove("open")
+    document.body.classList.remove("stopScrolling")
+}))
