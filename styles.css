@@ -388,6 +388,7 @@ body.open .hamburger .bar:last-child{
 .hero-image{
     position: relative;
     width: 100%;
+    margin-left: 2vw;
     background: var(--bg-color-transperent) ;
     min-height: 75%;
     /* margin-top: -120px; */
@@ -443,7 +444,7 @@ body.open .hamburger .bar:last-child{
 }
 .skills-wrap{
     display: grid;
-    grid-template-columns:repeat( 3 , 1fr);
+    grid-template-columns:repeat( 4 , 1fr);
     margin-top: 2rem;
     justify-content: space-between;
 }
