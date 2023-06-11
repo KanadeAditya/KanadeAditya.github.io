@@ -415,7 +415,7 @@ body.open .hamburger .bar:last-child{
 }
 
 .container .home-img{
-    width: 40vw;
+    width: 30vw;
     border-radius: 35px;
     border: 2px solid var(--main-color-2);
     box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
