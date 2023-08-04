@@ -185,8 +185,24 @@
                                 </div>
                                 <div class="sk-title skills-card-name">AWS</div>
                             </div>
-                            
-                       
+                            <div class="skills-card">
+                                <div class="sk-progress">
+                                    <img class="skills-card-img" src="./images&icons/icons8-python-240.png" alt="err">
+                                </div>
+                                <div class="sk-title skills-card-name">Python</div>
+                            </div>
+                            <div class="skills-card">
+                                <div class="sk-progress">
+                                    <img class="skills-card-img" src="./images&icons/icons8-next.js-240.png" alt="err">
+                                </div>
+                                <div class="sk-title skills-card-name">Next.js</div>
+                            </div>
+                            <div class="skills-card">
+                                <div class="sk-progress">
+                                    <img class="skills-card-img" src="./images&icons/icons8-tailwind-css-240.png" alt="err">
+                                </div>
+                                <div class="sk-title skills-card-name">Tailwind.css</div>
+                            </div>
                     </div>
                 </div>
             </div>
@@ -204,6 +220,25 @@
                     </div>
                 </div>
                 <div class="portfolio-gallery">
+                    <div class="prt-card project-card">
+                        <div class="prt-image">
+                            <img src="./images&icons/projects/homesteadhorizon.png" alt="err">
+                        </div>
+                        <div class="prt-desc">
+                            <h3 class="project-title">Homestead Horizon</h3>
+                            <p class="text project-description">A vacation rental platform offering seamless booking,
+                                powerful search, and intuitive guest and host
+                                management<br><span
+                                    class="tech">⚙️TECH STACK :</span> <br><span
+                                    class="tech stack project-tech-stack">Typescript | Next.js | Mongo DB | React.js | Tailwind.css | Prisma</span></p>
+                            <div class="card-buttons">
+                                <a class="btn secondary-btn sm project-deployed-link" target="_blank"
+                                    href="https://homesteadhorizon.vercel.app/">View Live</a>
+                                <a class="btn secondary-btn sm project-github-link" target="blank"
+                                    href="https://github.com/KanadeAditya/Homestead-Horizon">Source Code</a>
+                            </div>
+                        </div>
+                    </div>
                     <div class="prt-card project-card">
                         <div class="prt-image">
                             <img src="./images&icons/projects/petmate.png" alt="err">
@@ -327,9 +362,9 @@
                 </div>
                 <form action="index.html" class="contact-form">
                     <h3>Send me a message</h3>
-                    <input type="text" class="form-input" placeholder="Your Name" required>
-                    <input type="email" class="form-input" placeholder="Your Email" required>
-                    <textarea placeholder="Message Details ..." class="form-input" required></textarea>
+                    <input id="contactname" type="text" class="form-input" placeholder="Your Name" required>
+                    <input id="contactemail" type="email" class="form-input" placeholder="Your Email" required>
+                    <textarea id="contactmessage" placeholder="Message Details ..." class="form-input" required></textarea>
                     <input type="submit" value="Send" class="btn">
                 </form>
             </div>
@@ -367,7 +402,11 @@
         contactform.addEventListener('submit',(e)=>{
             e.preventDefault();
 
-            alert('This feature is not yet been added')
+            alert('This feature is not yet been added\nSorry for the inconvenience\nYou can reach out to me at adityakanade00@gmail.com.')
+
+            e.target.contactname.value=""
+            e.target.contactemail.value=""
+            e.target.contactmessage.value=""
         })
     </script>
 </body>
